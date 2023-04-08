@@ -1,0 +1,14 @@
+ul{
+    padding-left: 0;
+    margin-bottom: 0;
+}
+.select-search-container:not(.select-search-is-multiple) .select-search-select{
+    z-index:99
+}
+.select-search-is-selected{
+    color: #fff;
+    background:#1e66f5;
+}
+.select-search-container{
+    --select-search-selected:#ECECEC;
+}

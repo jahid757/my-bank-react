@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { createContext, useEffect, useState } from 'react';
+import './assets/css/bootstrap.css'
+import './assets/css/style.css';
+import AppRoutes from './routes/Route';
+import { fetchUserData } from './Auth/CallAPI';
+export const UserContext = createContext();
 
 function App() {
+  const [user, setUser] = useState(false);
+  const loginByAuth = async () => {
+    const userKey = localStorage.getItem("key");
+    if(userKey){
+      const userData = await fetchUserData(userKey);
+      setUser(userData)
+    }
+  };
+
+  useEffect(()=>{loginByAuth()},[])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={[user, setUser]}>
+      <div className="mobile_body no_scroll" style={{backgroundColor:"#F4F8FB"}} >
+          <AppRoutes user={user}/>
+      </div>
+    </UserContext.Provider>
   );
 }
 
