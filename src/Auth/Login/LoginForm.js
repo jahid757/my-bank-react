@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { UserContext } from './../../App';
 import { Navigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const LoginForm = () => {
     const [user, setUser] = useContext(UserContext)
@@ -20,9 +21,21 @@ const LoginForm = () => {
             body: JSON.stringify(data)
         })
         const response = await request.json();
-        setUser(response.userData)
-        setAuthKeyInLocal(response.access_token)
-        // console.log(data,response)
+        if(response.status_code === 201){
+            setUser(response.userData)
+            setAuthKeyInLocal(response.access_token)
+            Swal.fire(
+                'Good job!',
+                `${response.message}`,
+                'success'
+              )
+        }else{
+            Swal.fire(
+                'OOPS!',
+                `${response.message}`,
+                'error'
+              )
+        }
     };
     
     if (user) {

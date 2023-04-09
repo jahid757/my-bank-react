@@ -1,9 +1,10 @@
 import React, { useContext, useState } from "react";
 import Container from "./../../components/Container";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import SelectValue from "../../components/form/select";
 import { useForm } from "react-hook-form";
 import VerifyOtp from "../OTP/VerifyOtp";
+import Swal from "sweetalert2";
 
 const passions = [
   {
@@ -19,6 +20,7 @@ const passions = [
 const RegiForm = () => {
   const [otpVerify, setOtpVerify] = useState();
   const [gender, setGender] = useState("male");
+  const [verified,setVerified] = useState(false)
 
   const {
     register,
@@ -53,13 +55,30 @@ const RegiForm = () => {
     console.log(response)
   };
 
+if(verified.status_code === 201 || verified.status_code === 500){
+  if(verified.status_code === 201){
+    Swal.fire(
+        'Good job!',
+        `${verified.message}`,
+        'success'
+      )
+      return <Navigate to="/login"/>
+}else{
+    Swal.fire(
+        'OOPS!',
+        `${verified.message}`,
+        'error'
+      )
+}
+}
+
   return (
    <>
     {
         otpVerify ? 
      <>
         <div className="d-flex container justify-content-center flex-column h-100">
-            <VerifyOtp/>
+            <VerifyOtp setVerified={setVerified}/>
         </div>
     </>
      :
