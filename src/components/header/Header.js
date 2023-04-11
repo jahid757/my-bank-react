@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <div className="header d-flex align-items-center justify-content-between bg-primary p-2 text-white mb-3">
+        <div className="header d-flex align-items-center justify-content-between bg-primary p-2 text-white mb-2">
             <Link to="/dashboard"><i className="fa-solid fa-house"></i></Link>
                 <div>
                     <h5>Heading</h5>

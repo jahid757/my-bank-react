@@ -11,7 +11,6 @@ function App() {
   const loginByAuth = async () => {
     const userKey = localStorage.getItem("key");
     if(typeof userKey === 'string' && userKey !== 'undefined'){
-      console.log(typeof userKey)
       const userData = await fetchUserData(userKey);
       setUser(userData)
     }

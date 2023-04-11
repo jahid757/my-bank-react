@@ -1,8 +1,8 @@
 import React from 'react';
 
-const FullContainer = ({children}) => {
+const FullContainer = ({center_xy,children,...rest}) => {
     return (
-        <div className="h-100 justify-content-center flex-column d-flex container">
+        <div {...rest} className={`h-100 container ${center_xy ? 'justify-content-center flex-column d-flex' : ''}`}>
             {children}
         </div>
     );

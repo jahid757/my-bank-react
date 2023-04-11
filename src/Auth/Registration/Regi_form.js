@@ -20,7 +20,8 @@ const passions = [
 const RegiForm = () => {
   const [otpVerify, setOtpVerify] = useState();
   const [gender, setGender] = useState("male");
-  const [verified,setVerified] = useState(false)
+  const [verified,setVerified] = useState(false);
+  const [selectValue, setSelectValue] = useState('banker')
 
   const {
     register,
@@ -31,8 +32,9 @@ const RegiForm = () => {
 
 
   const onSubmit = async (data) => {
-    data.image = null;
-    data.gender = gender;
+    // data.image = null;
+    // data.gender = gender;
+    // data.profession = selectValue
 
     const request = await fetch(`https://wirelessbd.com/api/register`, {
         method: "POST",
@@ -47,7 +49,9 @@ const RegiForm = () => {
             "password_confirmation": data.password_confirmation,
             "gender": gender,
             "address": data.address,
-            "image": null
+            "image": null,
+            "profession":selectValue,
+            "wallet":data.wallet
           })
     });
     const response = await request.json();
@@ -168,9 +172,25 @@ if(verified.status_code === 201 || verified.status_code === 500){
         <div className={`single_input`}>
           {/* <div className={`single_input ${errors.profession ? "mb-3" : ""}`}> */}
           <i className="fa-solid fa-briefcase"></i>
-          <SelectValue options={passions} />
+          <SelectValue selectValue={selectValue} setSelectValue={setSelectValue} options={passions} />
           {/* {...register("profession", { required: true })} */}
           {/* {errors.profession && <span className="d-block text-danger w-100 position-absolute">Profession is required</span>} */}
+        </div>
+
+        <div className={`single_input ${errors.wallet ? "mb-3" : ""}`}>
+        <i className="fa-solid fa-wallet"></i>
+          <input
+            {...register("wallet", { required: true })}
+            autoComplete="off"
+            type="text"
+            placeholder="Wallet"
+            className="form-control"
+          />
+          {errors.wallet && (
+            <span className="d-block text-danger w-100 position-absolute">
+              Wallet is required
+            </span>
+          )}
         </div>
 
         <div className={`single_input ${errors.address ? "mb-3" : ""}`}>

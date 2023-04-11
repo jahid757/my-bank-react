@@ -8,6 +8,10 @@ import Profile from "../pages/Profile";
 import EditProfile from "../pages/EditProfile";
 import ResetPassword from "../Auth/ResetPassword/ResetPassword";
 import EditMobile from "../Auth/EditMobile/EditMobile";
+import Dashboard from "../pages/Dashboard";
+import Card from "../pages/Card";
+import CreateCard from "../pages/CreateCard";
+import Account from "../pages/Account";
 
 const AppRoutes = ({ user }) => {
   return (
@@ -18,11 +22,16 @@ const AppRoutes = ({ user }) => {
           <Route path="/registration" element={<Registration />} />
 
           <Route element={<PrivateRoute user={user} />}>
-            <Route index element={<Profile/>} />
+            <Route index element={<Dashboard/>} />
              <Route path="/edit-profile" element={<EditProfile/>} /> 
              <Route path="/edit-mobile" element={<EditMobile/>} /> 
             <Route  path="/reset-password" element={<ResetPassword />} />
             <Route  path="/profile" element={<Profile/>} />
+            <Route path="/dashboard" element ={<Dashboard/>}/>
+            <Route path="/card" element ={<Card/>}/>
+            <Route path="/create-card" element ={<CreateCard/>}/>
+            <Route path="/account" element ={<Account/>}/>
+            
           </Route>
 
           <Route path="*" element={<NotFoundB/>} />

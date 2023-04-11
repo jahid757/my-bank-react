@@ -5,7 +5,7 @@ const AuthFooter = () => {
     return (
         <div className="bottom_nav p-2 ">
             <div className="d-flex justify-content-center text-center">
-                <Link href="/dashboard" className="col">
+                <Link to="/dashboard" className="col">
                     <div className="menu_item active">
                         <i className="fa-solid fa-house"></i>
                         <p>Dashboard</p>
