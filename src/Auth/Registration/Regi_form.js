@@ -263,7 +263,7 @@ if(verified.status_code === 201 || verified.status_code === 500){
             Registration
           </button>
           <label className="mt-2 text-center d-block" htmlFor="login">
-            Already have an account? <a href="/login">login</a>
+            Already have an account? <Link href="/login">login</Link>
           </label>
         </div>
       </form>

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Header from "../components/header/Header";
 import AuthFooter from "../components/footer/AuthFooter";
-import CreateHome from "../components/createCard/CreateHome";
-import BankCreate from "../components/createCard/BankCreate";
-import MobileCreate from "../components/createCard/MobileCreate";
+import CreateHome from "../components/createAccount/CreateHome";
+import BankCreate from "../components/createAccount/BankCreate";
+import MobileCreate from "../components/createAccount/MobileCreate";
 
 const CreateCard = () => {
   const [bankType, setBankType] = useState("");

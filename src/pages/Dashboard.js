@@ -5,12 +5,14 @@ import FullContainer from './../components/FullContainer';
 // import DashboardFooter from '../components/dashboard_2/DashboardFooter';
 import DashboardHeader from './../components/dashboard/DashboardHeader';
 import DashboardBody from './../components/dashboard/DashboardBody';
+import ProfileBalance from './../components/profile/Profile_Balance';
 
 const Dashboard = () => {
     return (
         <>
             <Header/>
                 <FullContainer>
+                <ProfileBalance/>
                     <DashboardHeader/>
                     <DashboardBody/>
                     {/* <DashboardFooter/> */}

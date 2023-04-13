@@ -174,15 +174,21 @@ a,a:hover{color:var(--main-color); text-decoration:none;}
     text-align: center;
     text-transform: capitalize;
 }
-.pay_card_wrap .pay_card{
+.btn-no-color button.primary_btn{
+    background-color: #adadad ;
+}
+.btn-no-color button.primary_btn.active{
+    background-color:var(--main-color);
+}
+.pay_card{
     background-color: #fff;
     padding: 10px;
     border-radius: 7px;
 }
-.pay_card_wrap .pay_card img{
+.pay_card img{
     width: 60px;
 }
-.pay_card_wrap .pay_card  .odd p:nth-child(odd){
+ .pay_card  .odd p:nth-child(odd){
     color: #a9a6a6;
 }
 

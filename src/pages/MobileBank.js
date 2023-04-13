@@ -2,20 +2,19 @@ import React, { useEffect, useState } from 'react';
 import Header from '../components/header/Header';
 import FullContainer from '../components/FullContainer';
 import AuthFooter from '../components/footer/AuthFooter';
-import SingleAccountCard from '../components/Account/SingleAccountCard';
-import { loadAccountData } from '../Auth/CallAPI';
+import { loadMobileAccountData } from '../Auth/CallAPI';
+import SingleMobileBank from '../components/mobileBank/SingleMobileBank';
 
-const Account = () => {
+const MobileBank = () => {
     const [accountData,setAccountData] = useState([])
     useEffect(()=> {
         async function load(){
-           const loadAccountDataList = await loadAccountData();
-           setAccountData(loadAccountDataList.bankAccountData)
+           const loadAccountDataList = await loadMobileAccountData();
+           setAccountData(loadAccountDataList.mobileWalletAccountData)
          }
          load()
        },[])
 
-    //    console.log(accountData)
 
     return (
         <>
@@ -24,15 +23,14 @@ const Account = () => {
             {
                 accountData.map((item, index) => {
                     return(
-                        <SingleAccountCard item={item} key={index}/>
+                        <SingleMobileBank item={item} key={index}/>
                     )
                 })
             }
-                {/* <SingleAccountCard/> */}
             </FullContainer>
             <AuthFooter/>
         </>
     );
 }
 
-export default Account;
+export default MobileBank;

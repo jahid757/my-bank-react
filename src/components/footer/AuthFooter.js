@@ -8,17 +8,23 @@ const AuthFooter = () => {
                 <Link to="/dashboard" className="col">
                     <div className="menu_item active">
                         <i className="fa-solid fa-house"></i>
-                        <p>Dashboard</p>
+                        <p>Home</p>
                     </div>
                 </Link>
                 
-                <Link to="/account" className="col">
+                
+                <Link to="/mobile-banking" className="col">
+                    <div className="menu_item">
+                        <i className="fa-solid fa-building-columns"></i>
+                        <p>MFS</p>
+                    </div>
+                </Link>
+<Link to="/account" className="col">
                     <div className="menu_item">
                         <i className="fa-solid fa-building-columns"></i>
                         <p>Account</p>
                     </div>
                 </Link>
-
                 <Link to="/card" className="col">
                     <div className="menu_item">
                         <i className="fa-brands fa-cc-visa"></i>

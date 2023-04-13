@@ -41,7 +41,7 @@ export const createAccount = async (body) => {
 
 
 export const loadAccountData = async () => {
-  const request = await fetch('https://wirelessbd.com/api/get-account-data',{
+  const request = await fetch('https://wirelessbd.com/api/get-bank-account-data',{
       method:'GET',
       headers:{
         "Content-Type":"application/json",
@@ -49,4 +49,39 @@ export const loadAccountData = async () => {
       }
     });
     return await request.json()
+}
+
+export const loadMobileAccountData = async () => {
+  const request = await fetch('https://wirelessbd.com/api/get-mobile-wallet-account-data',{
+      method:'GET',
+      headers:{
+        "Content-Type":"application/json",
+        Authorization: `Bearer ${userKey}`,
+      }
+    });
+    return await request.json()
+}
+
+export const updateAccountData = async (body,id) =>{
+  const request = await fetch(`https://wirelessbd.com/api/update-account-data/${id}`,{
+    method:'PUT',
+    headers:{
+      "Content-Type":"application/json",
+        Authorization: `Bearer ${userKey}`,
+    },
+    body:JSON.stringify(body)
+  });
+  return await request.json()
+
+}
+
+export const getAccountDataById = async (id) => {
+  const request = await fetch(`https://wirelessbd.com/api/edit-account-data/${id}`,{
+    method:'GET',
+    headers:{
+      "Content-Type":"application/json",
+        Authorization: `Bearer ${userKey}`,
+    }
+  });
+  return await request.json()
 }

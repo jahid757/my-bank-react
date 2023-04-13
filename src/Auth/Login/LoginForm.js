@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { UserContext } from './../../App';
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const LoginForm = () => {
@@ -64,10 +64,10 @@ const LoginForm = () => {
                <div className="condition pt-2">
                    <div className="d-flex align-items-center justify-content-between">
                    <label className="d-flex align-items-center gap-2" htmlFor="role"><input type="checkbox" name="role" id="role"/>Remember me</label>
-                       <label className="mt-0" htmlFor="login"><a href="/forget">Forget Password</a></label>
+                       <label className="mt-0" htmlFor="login"><Link href="/forget">Forget Password</Link></label>
                    </div>
                    <button type="submit" className="primary_btn">Login</button>
-                   <label className="mt-2 text-center d-block" htmlFor="login">Don't have an account? <a href="/registration">Register</a></label>
+                   <label className="mt-2 text-center d-block" htmlFor="login">Don't have an account? <Link href="/registration">Register</Link></label>
                </div>
            </form>
         </div>

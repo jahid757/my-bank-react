@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import OTPInput from 'react-otp-input';
 
-const VerifyOtp = ({authKey,setVerified}) => {
+const VerifyOtp = ({authKey,setVerified,setCode}) => {
     const { register, handleSubmit,  watch, formState: { errors }, } = useForm();
 
       const [verify_code, setVerify_code] = useState('');
@@ -21,6 +21,7 @@ const VerifyOtp = ({authKey,setVerified}) => {
             setVerified(data)
           }
         })
+        setCode(data)
         // console.log(JSON.stringify(Number(verify_code)))
       }
     return (

@@ -11,7 +11,8 @@ const cardDemoData = [
         holder_name:'jahid',
         cvv_cvc: '871',
         exp_date: '03-03-2023',
-        image:visa_card
+        image:visa_card,
+        id:1
     },
     {   
         card_name:'Visa',
@@ -19,7 +20,8 @@ const cardDemoData = [
         holder_name:'jahid',
         cvv_cvc: '871',
         exp_date: '03-03-2023',
-        image:visa_card
+        image:visa_card,
+        id:2
     },
     {   
         card_name:'Visa',
@@ -27,7 +29,8 @@ const cardDemoData = [
         holder_name:'jahid',
         cvv_cvc: '871',
         exp_date: '03-03-2023',
-        image:visa_card
+        image:visa_card,
+        id:3
     },
     {   
         card_name:'Visa',
@@ -35,7 +38,8 @@ const cardDemoData = [
         holder_name:'jahid',
         cvv_cvc: '871',
         exp_date: '03-03-2023',
-        image:visa_card
+        image:visa_card,
+        id:4
     },
 ]
 
@@ -57,7 +61,7 @@ const CardBody = () => {
             {
                 cardData.map((item, index) => {
                     return(
-                        <SingleCard item={item} key={index}/>
+                        <SingleCard item={item} key={item.id}/>
                     )
                 })
             }
