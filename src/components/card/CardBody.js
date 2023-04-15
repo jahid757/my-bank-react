@@ -1,58 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SingleCard from "./SingleCard";
-import { visa_card } from "../../assets/images/images";
-import { loadAccountData } from "../../Auth/CallAPI";
-
-const cardDemoData = [
-    {   
-        card_name:'Visa',
-        card_number:'0433874923',
-        holder_name:'jahid',
-        cvv_cvc: '871',
-        exp_date: '03-03-2023',
-        image:visa_card,
-        id:1
-    },
-    {   
-        card_name:'Visa',
-        card_number:'0433874923',
-        holder_name:'jahid',
-        cvv_cvc: '871',
-        exp_date: '03-03-2023',
-        image:visa_card,
-        id:2
-    },
-    {   
-        card_name:'Visa',
-        card_number:'0433874923',
-        holder_name:'jahid',
-        cvv_cvc: '871',
-        exp_date: '03-03-2023',
-        image:visa_card,
-        id:3
-    },
-    {   
-        card_name:'Visa',
-        card_number:'0433874923',
-        holder_name:'jahid',
-        cvv_cvc: '871',
-        exp_date: '03-03-2023',
-        image:visa_card,
-        id:4
-    },
-]
+import { getCreditCardData } from "../../Auth/CallAPI";
 
 const CardBody = () => {
-    const [cardData,setCardData] = useState(cardDemoData);
+    const [cardData,setCardData] = useState([]);
+    const loadData = async() => {
+      const data = await getCreditCardData();
+      setCardData(data.creditCardData)
+    }
 
-    // useEffect(()=> {
-    //  async function load(){
-    //     const loadCardData = await loadAccountData();
-    //     setCardData(loadCardData.accountData)
-    //   }
-    //   load()
-    // },[])
+    useEffect(()=> {
+      loadData()
+    },[])
 
 
   return (

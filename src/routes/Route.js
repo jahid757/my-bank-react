@@ -22,6 +22,8 @@ import EditData from "../pages/EditData";
 import UpdateMFS from "../pages/UpdateMFS";
 import BalanceTransfer from "../pages/BalanceTransfer";
 import Income from "../pages/Income";
+import CreateMFS from "../pages/CreateMFS";
+import CreateBank from "../pages/CreatBank";
 
 const AppRoutes = ({ user }) => {
   return (
@@ -40,14 +42,16 @@ const AppRoutes = ({ user }) => {
             <Route path="/dashboard" element ={<Dashboard/>}/>
             <Route path="/card" element ={<Card/>}/>
             <Route path="/create-card" element ={<CreateCard/>}/>
+            <Route path="/create-bank" element ={<CreateBank/>}/>
             <Route path="/account" element ={<Account/>}/>
             <Route path="/mobile-banking" element ={<MobileBank/>}/>
-            <Route path="/transaction" element={<Transaction/>}/>
-            <Route path="/transfer" element={<BalanceTransfer/>}/>
+            <Route path="/create-mfs" element={<CreateMFS/>}/>
             
 
 
             {/* dynamic route */}
+            <Route path="/mfs-transfer/:id" element={<BalanceTransfer/>}/>
+            <Route path="/mfs-transaction/:id" element={<Transaction/>}/>
             <Route path ="/edit-data/:data" element ={<EditData/>}/>
             <Route path="/card-details/:id" element={<CardDetails/>}/>
             <Route path="/msf-details/:id" element={<MSFDetails/>}/>

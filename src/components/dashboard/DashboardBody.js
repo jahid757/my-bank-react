@@ -122,6 +122,23 @@ const ds_body_data_2 = [
       route: "/",
     },
   ];
+  
+const ds_body_data_beneficiary = [
+  {
+    id: 1,
+    title: "Rule",
+    description: "Bank Beneficiary",
+    image: bd_flag,
+    route: "/",
+  },
+  {
+    id: 2,
+    title: "Rule",
+    description: "MFS Beneficiary",
+    image: bd_flag,
+    route: "/",
+  }
+];
 
 const DashboardBody = () => {
   return (
@@ -163,6 +180,24 @@ const DashboardBody = () => {
         })}
       </div>
     </div>
+    <div className="ds_body img-40 mb-3">
+      <h4 className="mb-1">Beneficiary</h4>
+      <div className="d-flex flex-wrap flex-row card justify-content-between">
+        {ds_body_data_beneficiary.map((item) => {
+          return (
+            <Link
+              to={item.route}
+              key={item.id}
+              className="w-50 gap-2 p-0 flex-column d-flex align-items-center border-end no-border-last"
+            >
+              <img src={item.image} alt={item.title} />
+              <p className="text-dark">{item.description}</p>
+            </Link>
+          );
+        })}
+      </div>
+    </div>
+
  <div className="ds_body img-40 mb-3">
       <h4 className="mb-1">Bank</h4>
       <div className="d-flex flex-wrap flex-row card justify-content-between">
@@ -180,6 +215,9 @@ const DashboardBody = () => {
         })}
       </div>
     </div>
+
+
+
     <div className="ds_body img-40 mb-3">
       <h4 className="mb-1">Bank</h4>
       <div className="d-flex flex-wrap flex-row card justify-content-center">

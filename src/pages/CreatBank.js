@@ -3,18 +3,17 @@ import Header from "../components/header/Header";
 import AuthFooter from "../components/footer/AuthFooter";
 import BankCreate from "../components/createAccount/BankCreate";
 import FullContainer from "../components/FullContainer";
-import CardCreate from "../components/createAccount/CardCard";
 
-const CreateCard = () => {
+const CreateBank = () => {
   return (
     <>
       <Header />
           <FullContainer center_xy={true}>
-            <CardCreate/>
+          <BankCreate/>
           </FullContainer>
       <AuthFooter />
     </>
   );
 };
 
-export default CreateCard;
+export default CreateBank;

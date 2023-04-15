@@ -39,9 +39,32 @@ export const createAccount = async (body) => {
   return await req.json();
 };
 
+export const createCard = async (body) => {
+  const req = await fetch("https://wirelessbd.com/api/save-credit-card-data", {
+    method: "POST",
+    headers:{
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${userKey}`
+    },
+    body: JSON.stringify(body),
+  });
+  return await req.json();
+};
+
 
 export const loadAccountData = async () => {
   const request = await fetch('https://wirelessbd.com/api/get-bank-account-data',{
+      method:'GET',
+      headers:{
+        "Content-Type":"application/json",
+        Authorization: `Bearer ${userKey}`,
+      }
+    });
+    return await request.json()
+}
+
+export const getCreditCardData = async () => {
+  const request = await fetch('https://wirelessbd.com/api/get-credit-card-data',{
       method:'GET',
       headers:{
         "Content-Type":"application/json",

@@ -257,13 +257,13 @@ if(verified.status_code === 201 || verified.status_code === 500){
               name="role"
               id="role"
             />
-            Agree with <Link href="#">Terms & Conditions</Link>
+            Agree with <Link to="#">Terms & Conditions</Link>
           </label>
           <button type="submit" className="primary_btn">
             Registration
           </button>
           <label className="mt-2 text-center d-block" htmlFor="login">
-            Already have an account? <Link href="/login">login</Link>
+            Already have an account? <Link to="/login">login</Link>
           </label>
         </div>
       </form>

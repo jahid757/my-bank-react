@@ -4,6 +4,7 @@ import FullContainer from '../components/FullContainer';
 import AuthFooter from '../components/footer/AuthFooter';
 import SingleAccountCard from '../components/Account/SingleAccountCard';
 import { loadAccountData } from '../Auth/CallAPI';
+import { Link } from 'react-router-dom';
 
 const Account = () => {
     const [accountData,setAccountData] = useState([])
@@ -28,7 +29,13 @@ const Account = () => {
                     )
                 })
             }
-                {/* <SingleAccountCard/> */}
+            <div className="back-to-top">
+        <div className="icon">
+          <Link to="/create-bank">
+            <i className="fa-solid fa-plus"></i>
+          </Link>
+        </div>
+      </div>
             </FullContainer>
             <AuthFooter/>
         </>

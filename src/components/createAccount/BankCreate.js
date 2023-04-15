@@ -95,7 +95,7 @@ const BankCreate = () => {
         className="needs-validation card"
         style={{ marginBottom: "13px" }}
       >
-        <h3 className="text-center heading_text">Create Bank Account</h3>
+        <h3 className="text-center heading_text">Add Bank Account</h3>
 
         {renderSelectValue.length > 0 ? (
           <div className={`single_input`}>
@@ -175,7 +175,7 @@ const BankCreate = () => {
 
         <div className="condition">
           <button type="submit" className="primary_btn mb-0">
-            Create Wallet
+            Add Bank Account
           </button>
         </div>
       </form>

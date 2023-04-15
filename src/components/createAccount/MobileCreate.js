@@ -84,7 +84,7 @@ const MobileCreate = () => {
         className="needs-validation card"
         style={{ marginBottom: "13px" }}
       >
-        <h3 className="text-center heading_text">Create mobile wallet</h3>
+        <h3 className="text-center heading_text">Add MFS</h3>
 
         {renderSelectValue.length > 0 ? (
           <div className={`single_input`}>
@@ -134,7 +134,7 @@ const MobileCreate = () => {
 
         <div className="condition">
           <button type="submit" className="primary_btn mb-0">
-            Create Wallet
+            Add MFS
           </button>
         </div>
       </form>

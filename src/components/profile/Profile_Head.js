@@ -25,7 +25,6 @@ const ProfileHead = () => {
         <div>
           <h4>{name}</h4>
           <p className="mb-0">{mobile}</p>
-          <p className="mb-0">Eleven - Twelve</p>
           <p className="mb-0 text-capitalize">{gender}</p>
         </div>
       </div>

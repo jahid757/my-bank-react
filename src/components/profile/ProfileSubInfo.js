@@ -19,7 +19,7 @@ const ProfileSubInfo = () => {
                 </div>
 
 
-                <div className=" pb-2">
+                <div className=" pb-0">
                     <Link to="/edit-data/card" className="d-flex align-items-center justify-content-between pointer-event text-dark">
                         <h4 className="h5">Edit Card</h4>
                         <i className="fa-solid fa-angle-right font-h4"></i>

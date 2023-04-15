@@ -56,7 +56,7 @@ const ProfileInfo = () => {
                 </div>
 
                 <div className="toggler mb-2 border-bottom pb-2">
-                    <Link onClick={userLogout} className="d-flex align-items-center justify-content-between pointer-event text-dark">
+                    <Link onClick={userLogout} className="d-flex align-items-center justify-content-between pointer-event text-danger">
                         <h4 className="h5">Logout</h4>
                         <i className="fa-solid fa-angle-right font-h4"></i>
                     </Link>

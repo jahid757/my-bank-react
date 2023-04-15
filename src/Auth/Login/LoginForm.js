@@ -64,10 +64,10 @@ const LoginForm = () => {
                <div className="condition pt-2">
                    <div className="d-flex align-items-center justify-content-between">
                    <label className="d-flex align-items-center gap-2" htmlFor="role"><input type="checkbox" name="role" id="role"/>Remember me</label>
-                       <label className="mt-0" htmlFor="login"><Link href="/forget">Forget Password</Link></label>
+                       <label className="mt-0" htmlFor="login"><Link to="/forget">Forget Password</Link></label>
                    </div>
                    <button type="submit" className="primary_btn">Login</button>
-                   <label className="mt-2 text-center d-block" htmlFor="login">Don't have an account? <Link href="/registration">Register</Link></label>
+                   <label className="mt-2 text-center d-block" htmlFor="login">Don't have an account? <Link to="/registration">Register</Link></label>
                </div>
            </form>
         </div>
