@@ -31,6 +31,52 @@ const ds_body_data = [
     route: "/",
   },
 ];
+const ds_body_data_3 = [
+  {
+    id: 1,
+    title: "Rule",
+    description: "Bank Accounts",
+    image: bd_flag,
+    route: "/account",
+  },
+  {
+    id: 2,
+    title: "Rule",
+    description: "MFS ",
+    image: bd_flag,
+    route: "/mobile-banking",
+  },
+  {
+    id: 3,
+    title: "Rule",
+    description: "Credit Card",
+    image: bd_flag,
+    route: "/card",
+  }
+];
+const ds_body_data_4 = [
+  {
+    id: 1,
+    title: "Rule",
+    description: "Bank Accounts",
+    image: bd_flag,
+    route: "/income/account",
+  },
+  {
+    id: 2,
+    title: "Rule",
+    description: "MFS ",
+    image: bd_flag,
+    route: "/income/mobile-banking",
+  },
+  {
+    id: 3,
+    title: "Rule",
+    description: "Wallet",
+    image: bd_flag,
+    route: "/income/card",
+  }
+];
 
 const ds_body_data_2 = [
     {
@@ -80,7 +126,44 @@ const ds_body_data_2 = [
 const DashboardBody = () => {
   return (
     <>
+       
+
         <div className="ds_body img-40 mb-3">
+      <h4 className="mb-1">My Accounts</h4>
+      <div className="d-flex flex-wrap flex-row card justify-content-between">
+        {ds_body_data_3.map((item) => {
+          return (
+            <Link
+              to={item.route}
+              key={item.id}
+              className="border-end no-border-last w-30 gap-2 p-0 flex-column d-flex align-items-center"
+            >
+              <img src={item.image} alt={item.title} />
+              <p className="text-dark">{item.description}</p>
+            </Link>
+          );
+        })}
+      </div>
+    </div>
+
+        <div className="ds_body img-40 mb-3">
+      <h4 className="mb-1">Income</h4>
+      <div className="d-flex flex-wrap flex-row card justify-content-between">
+        {ds_body_data_4.map((item) => {
+          return (
+            <Link
+              to={item.route}
+              key={item.id}
+              className="border-end no-border-last w-30 gap-2 p-0 flex-column d-flex align-items-center"
+            >
+              <img src={item.image} alt={item.title} />
+              <p className="text-dark">{item.description}</p>
+            </Link>
+          );
+        })}
+      </div>
+    </div>
+ <div className="ds_body img-40 mb-3">
       <h4 className="mb-1">Bank</h4>
       <div className="d-flex flex-wrap flex-row card justify-content-between">
         {ds_body_data.map((item) => {
@@ -97,7 +180,6 @@ const DashboardBody = () => {
         })}
       </div>
     </div>
-
     <div className="ds_body img-40 mb-3">
       <h4 className="mb-1">Bank</h4>
       <div className="d-flex flex-wrap flex-row card justify-content-center">

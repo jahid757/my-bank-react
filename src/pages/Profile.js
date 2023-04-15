@@ -13,8 +13,8 @@ const Profile = () => {
                 <Container>
                     <ProfileHead/>
                     
-                    <ProfileInfo/>
                     <ProfileSubInfo/>
+                    <ProfileInfo/>
                 </Container>
             <AuthFooter/>
         </>

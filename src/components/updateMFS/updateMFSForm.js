@@ -1,91 +1,72 @@
-import React, { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
-import SelectValue from "../form/select";
-import FullContainer from "../FullContainer";
+import React, { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
+import { getAccountDataById, updateAccountData } from '../../Auth/CallAPI';
+import { useParams } from 'react-router-dom';
+import SelectValue from '../form/select';
 
-import Swal from "sweetalert2";
-import { Navigate, useParams } from "react-router-dom";
-import { getAccountDataById, updateAccountData } from "../../Auth/CallAPI";
-
-const UpdateAccountForm = () => {
-  const {id} = useParams()
-  const [selectValue, setSelectValue] = useState();
-  const [navigate,setNavigate] = useState(false);
-  const [accountType,setAccountType] = useState([
-    {
-        name:'Savings',
-        value:'savings'
-    },
-    {
-        name:'Current',
-        value:'current'
-    }
-  ]);
-  const [accountTypeValue,setAccountValue] = useState('');
-  const [singleAccountData,setSingleAccountData] = useState({})
-
-  const onSubmit = async (data) => {
-    const body = {
-      ...data,
-      // id:,
-      bank_id: selectValue,
-      bank_account_type: accountTypeValue,
-      mobile_wallet_id: null,
-    };
-
-    const update = await updateAccountData(body,id)
-    console.log(update)
-    if(update.status_code === 201){
-        Swal.fire(
-            'Good job!',
-            `${update.message}`,
-            'success'
-          )
-          
-    }else{
-        Swal.fire(
-            'OOPS!',
-            `${update.message}`,
-            'error'
-          )
-    }
-    setNavigate(true)
-  };
-
-  async function loadAccountData(){
-    const data = await getAccountDataById(id);
-    // console.log(data)
-    setSingleAccountData(data.singleAccountData);
-    setAccountValue('current');
-  }
-useEffect(() => {
-  loadAccountData();
-},[])
-
-
-
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
-
-  if(navigate){
-    return <Navigate to="/profile"/>
-}
-
-
-
-  return (
-    <FullContainer center_xy={true}>
-      <form
+const UpdateMFSForm = () => {
+    const [singleAccountData,setSingleAccountData] = useState({});
+    const [accountTypeValue,setAccountValue] = useState('');
+    const {id} = useParams();
+    const [accountType,setAccountType] = useState([
+        {
+            name:'Savings',
+            value:'savings'
+        },
+        {
+            name:'Current',
+            value:'current'
+        }
+      ]);
+    const {
+        register,
+        handleSubmit,
+        watch,
+        formState: { errors },
+      } = useForm();
+      const onSubmit = async (data) => {
+        const body = {
+          ...data,
+          // id:,
+        //   bank_id: selectValue,
+        //   bank_account_type: accountTypeValue,
+          mobile_wallet_id: null,
+        };
+    
+        const update = await updateAccountData(body,id)
+        console.log(update)
+        if(update.status_code === 201){
+            Swal.fire(
+                'Good job!',
+                `${update.message}`,
+                'success'
+              )
+              
+        }else{
+            Swal.fire(
+                'OOPS!',
+                `${update.message}`,
+                'error'
+              )
+        }
+      };
+      async function loadAccountData(){
+        const data = await getAccountDataById(id);
+        // console.log(data)
+        setSingleAccountData(data.singleAccountData);
+      }
+      useEffect(() => {
+        loadAccountData();
+      },[])
+    return (
+            <form
         onSubmit={handleSubmit(onSubmit)}
         autoComplete="off"
         className="needs-validation card"
         style={{ marginBottom: "13px" }}
       >
-        <h3 className="text-center heading_text">Update Bank Account</h3>
+        <h3 className="text-center heading_text">Update Mobile Bank</h3>
 
  <div className={`single_input ${errors.branch ? "mb-3" : ""}`}>
  <i className="fa-solid fa-location-dot"></i>
@@ -159,8 +140,7 @@ useEffect(() => {
           </button>
         </div>
       </form>
-    </FullContainer>
-  );
-};
+    );
+}
 
-export default UpdateAccountForm;
+export default UpdateMFSForm;

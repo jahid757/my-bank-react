@@ -300,9 +300,9 @@ p{
     padding-top: 11px;
     color: #fff;
 }
-.w-30{
+/* .w-30{
     width:30%
-}
+} */
 
 .card .toggler.border-bottom:last-child{
  padding-bottom: 0 !important;
@@ -482,6 +482,9 @@ p{
     font-size: 13px;
 }
 .w-70{width: 70%;}
+.no-border-last:last-child{
+    border-right: none !important;
+}
 
 @media (max-width: 667px) {
     .mobile_body{

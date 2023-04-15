@@ -13,8 +13,8 @@ const Dashboard = () => {
             <Header/>
                 <FullContainer>
                 <ProfileBalance/>
-                    <DashboardHeader/>
                     <DashboardBody/>
+                    <DashboardHeader/>
                     {/* <DashboardFooter/> */}
                 </FullContainer>
             <AuthFooter/>
