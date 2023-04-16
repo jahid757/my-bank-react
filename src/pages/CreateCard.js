@@ -12,7 +12,7 @@ const CreateCard = () => {
           <FullContainer center_xy={true}>
             <CardCreate/>
           </FullContainer>
-      <AuthFooter />
+      <AuthFooter footerActive={'card'} />
     </>
   );
 };

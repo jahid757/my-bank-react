@@ -129,14 +129,14 @@ const ds_body_data_beneficiary = [
     title: "Rule",
     description: "Bank Beneficiary",
     image: bd_flag,
-    route: "/",
+    route: "/beneficiary",
   },
   {
     id: 2,
     title: "Rule",
     description: "MFS Beneficiary",
     image: bd_flag,
-    route: "/",
+    route: "/beneficiary",
   }
 ];
 

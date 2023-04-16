@@ -11,7 +11,7 @@ const CreateBank = () => {
           <FullContainer center_xy={true}>
           <BankCreate/>
           </FullContainer>
-      <AuthFooter />
+      <AuthFooter footerActive={'account'} />
     </>
   );
 };

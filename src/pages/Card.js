@@ -11,7 +11,7 @@ const Card = () => {
             <FullContainer>
                 <CardBody/>
             </FullContainer>
-        <AuthFooter/>
+        <AuthFooter footerActive={'card'}/>
         </>
     );
 }

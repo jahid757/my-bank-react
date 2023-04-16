@@ -13,9 +13,10 @@ const BankDetails = () => {
            <FullContainer center_xy={true}>
                 <BankDetailsHead/>
                 <BankDetailsBody/>
-                <DetailsFooter/>
+                <DetailsFooter route="/bank"/>
            </FullContainer>
-           <AuthFooter/> 
+           <AuthFooter footerActive={'account'}/> 
+           
         </>
     );
 }

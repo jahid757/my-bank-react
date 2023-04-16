@@ -5,7 +5,7 @@ export const fetchUserData = async (key) => {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${key}`,
+      Authorization: `Bearer ${ key || userKey}`,
     },
   });
   const response = await req.json();

@@ -17,7 +17,7 @@ const Dashboard = () => {
                     <DashboardHeader/>
                     {/* <DashboardFooter/> */}
                 </FullContainer>
-            <AuthFooter/>
+            <AuthFooter footerActive={'dashboard'}/>
         </>
     );
 }

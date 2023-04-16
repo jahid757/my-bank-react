@@ -16,7 +16,7 @@ const Profile = () => {
                     <ProfileSubInfo/>
                     <ProfileInfo/>
                 </Container>
-            <AuthFooter/>
+            <AuthFooter footerActive={'profile'}/>
         </>
     );
 }

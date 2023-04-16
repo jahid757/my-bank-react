@@ -11,7 +11,7 @@ const EditProfile = () => {
                 <Container>
                     <EditProfileForm/>
                 </Container>
-            <AuthFooter/>
+            <AuthFooter footerActive={'profile'}/>
         </>
     );
 }

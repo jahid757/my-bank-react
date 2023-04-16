@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, Navigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { UserContext } from '../../App';
 
 const ProfileInfo = () => {
-    const [user,setUser] = useContext(UserContext)
+    const [user,setUser] = useContext(UserContext);
+    const [navigate,setNavigate] = useState(false)
 
     const userLogout = async () => {
         const userKey = localStorage.getItem("key");
@@ -23,7 +24,8 @@ const ProfileInfo = () => {
                 'success'
               )
             localStorage.removeItem('key')
-            setUser(false)
+            setUser(false);
+            setNavigate(true)
         }else{
             Swal.fire(
                 'OOPS!',
@@ -31,6 +33,9 @@ const ProfileInfo = () => {
                 'error'
               )
         }
+    }
+    if(navigate){
+        <Navigate to="/login"/>
     }
     return (
         <div className="card mb-3">

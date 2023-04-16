@@ -6,7 +6,7 @@ const SingleAccountCard = ({item}) => {
     // console.log(item)
     return (
         <div className="pay_card_wrap">
-            <Link to={`/card-details/${item.id}`} className="pay_card mb-3 card">
+            <Link to={`/bank-details/${item.id}`} className="pay_card mb-3 card">
                     <div className="d-flex justify-content-between align-items-center mb-2 border-bottom pb-1">
                         <img src={visa_gold} alt="visa_card"/>
                         <div>
@@ -29,8 +29,8 @@ const SingleAccountCard = ({item}) => {
                         <p>A/c Type: {item.bank_account_type}</p>
                     </div> */}
                     <div className="d-flex align-items-center justify-content-between gap-2">
-                        <button className="w-50 primary_btn m-0"><Link to={`/update-account/${item.id}`} className="text-white">Transfer</Link></button>
-                        <button className="w-50 primary_btn m-0"><Link to={`/bank-details/${item.id}`} className="text-white">View Details</Link></button>
+                        <button className="w-50 primary_btn m-0"><Link to={`/bank-transfer/${item.id}`} className="text-white">Transfer</Link></button>
+                        <button className="w-50 primary_btn m-0"><Link to={`/bank-transaction/${item.id}`} className="text-white">Transaction</Link></button>
                     </div>
                 </Link>
         </div>

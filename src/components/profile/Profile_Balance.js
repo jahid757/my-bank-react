@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { fetchUserData } from './../../Auth/CallAPI';
 
 const ProfileBalance = () => {
+    const [profileData,setProfileData] = useState({})
+    useEffect(() => {
+        async function profileData(){
+            const data = await fetchUserData();
+            setProfileData(data)
+        }
+        profileData()
+    },[])
     return (
         <div className="card mb-3">
                 <div className="d-flex align-items-start gap-2">
@@ -9,7 +18,7 @@ const ProfileBalance = () => {
                     <div className="border-end border-secondary pe-2 w-48 text-secondary">
                         <h4 className='text-center mb-2'>Wallet</h4>
                         <p className="d-flex align-items-center mb-2"> <i className="fa-solid fa-images h5 me-1"></i> <span>Current Balance</span></p>
-                        <h4 className='text-center text-success'>1000 Tk</h4>
+                        <h4 className='text-center text-success'>{profileData.wallet} Tk</h4>
                         <button className="primary_btn"><i className="fa-solid fa-bolt"></i> Transaction</button>
                     </div>
 

@@ -58,7 +58,7 @@ const EditProfileForm = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form className='card' onSubmit={handleSubmit(onSubmit)}>
             <div className={`single_input ${errors.name ? "mb-4" : ""}`}>
           <i className="fa-solid fa-user"></i>
           <input

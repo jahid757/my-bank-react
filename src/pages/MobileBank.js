@@ -36,7 +36,7 @@ const MobileBank = () => {
         </div>
       </div>
             </FullContainer>
-            <AuthFooter/>
+            <AuthFooter footerActive={'mfs'}/>
         </>
     );
 }

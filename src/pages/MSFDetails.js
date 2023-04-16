@@ -13,7 +13,7 @@ const MSFDetails = () => {
             <MSFDetailHEad/>
             <MSFDetailsBody/>
          </FullContainer>   
-        <AuthFooter/>
+        <AuthFooter footerActive={'mfs'}/>
         </>
     );
 }

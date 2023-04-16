@@ -8,7 +8,7 @@ const ResetPassword = () => {
         <>
           <NoAuthHeader/>
             <ResetPasswordForm/>
-          <AuthFooter/>  
+          <AuthFooter footerActive={'profile'}/>  
         </>
     );
 }

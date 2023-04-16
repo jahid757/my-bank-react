@@ -12,7 +12,7 @@ const EditMobile = () => {
                     <EditMobileForm/>
                 }
             </FullContainer>
-            <AuthFooter/>
+            <AuthFooter footerActive={'profile'}/>
         </>
     );
 }

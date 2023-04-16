@@ -11,7 +11,7 @@ const CreateMFS = () => {
          <FullContainer center_xy={true}>
             <MobileCreate/>
          </FullContainer>   
-         <AuthFooter/>
+         <AuthFooter footerActive={'mfs'}/>
         </>
     );
 }

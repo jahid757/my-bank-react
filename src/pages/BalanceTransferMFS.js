@@ -5,7 +5,7 @@ import AuthFooter from '../components/footer/AuthFooter';
 import TransferHead from '../components/balanceTransfer/TransferHead';
 import TransferBody from '../components/balanceTransfer/TransferBody';
 
-const BalanceTransfer = () => {
+const BalanceTransferMFS = () => {
     return (
         <>
             <Header/>
@@ -13,9 +13,9 @@ const BalanceTransfer = () => {
                 <TransferHead/>
                 <TransferBody/>
             </FullContainer>
-            <AuthFooter/>
+            <AuthFooter footerActive={'mfs'}/>
         </>
     );
 }
 
-export default BalanceTransfer;
+export default BalanceTransferMFS;

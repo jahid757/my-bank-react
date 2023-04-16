@@ -485,7 +485,9 @@ p{
 .no-border-last:last-child{
     border-right: none !important;
 }
-
+.circle {
+    border-radius:70% ;
+}
 @media (max-width: 667px) {
     .mobile_body{
         width: 100%;

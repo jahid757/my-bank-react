@@ -2,21 +2,20 @@ import React from 'react';
 import Header from '../components/header/Header';
 import FullContainer from '../components/FullContainer';
 import AuthFooter from '../components/footer/AuthFooter';
-import CardDetailsHead from '../components/cardDetails/CardDetailsHead';
-import CardDetailsBody from '../components/cardDetails/CardDetailsBody';
+import TransferHead from '../components/balanceTransfer/TransferHead';
+import TransferBody from '../components/balanceTransfer/TransferBody';
 
-
-const CardDetails = () => {
+const BalanceTransferCard = () => {
     return (
         <>
             <Header/>
             <FullContainer center_xy={true}>
-                <CardDetailsHead/>
-                <CardDetailsBody/>
+                <TransferHead/>
+                <TransferBody/>
             </FullContainer>
             <AuthFooter footerActive={'card'}/>
         </>
     );
 }
 
-export default CardDetails;
+export default BalanceTransferCard;

@@ -257,7 +257,7 @@ if(verified.status_code === 201 || verified.status_code === 500){
               name="role"
               id="role"
             />
-            Agree with <Link to="#">Terms & Conditions</Link>
+            Agree with <Link to="/terms">Terms & Conditions</Link>
           </label>
           <button type="submit" className="primary_btn">
             Registration

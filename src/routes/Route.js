@@ -20,10 +20,15 @@ import BankDetails from './../pages/BankDetails';
 import Transaction from './../pages/Transaction';
 import EditData from "../pages/EditData";
 import UpdateMFS from "../pages/UpdateMFS";
-import BalanceTransfer from "../pages/BalanceTransfer";
+import BalanceTransfer from "../pages/BalanceTransferMFS";
 import Income from "../pages/Income";
 import CreateMFS from "../pages/CreateMFS";
 import CreateBank from "../pages/CreatBank";
+import BalanceTransferMFS from "../pages/BalanceTransferMFS";
+import BalanceTransferBank from "../pages/BalanceTransferBank";
+import BalanceTransferCard from "../pages/BalanceTransferCard";
+import Beneficiary from "../pages/Beneficiary";
+import Terms from "../pages/Terms";
 
 const AppRoutes = ({ user }) => {
   return (
@@ -32,6 +37,8 @@ const AppRoutes = ({ user }) => {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/registration" element={<Registration />} />
+          <Route  path="/forget" element={<ResetPassword />} />
+          <Route  path="/terms" element={<Terms />} />
 
           <Route element={<PrivateRoute user={user} />}>
             <Route index element={<Dashboard/>} />
@@ -46,12 +53,20 @@ const AppRoutes = ({ user }) => {
             <Route path="/account" element ={<Account/>}/>
             <Route path="/mobile-banking" element ={<MobileBank/>}/>
             <Route path="/create-mfs" element={<CreateMFS/>}/>
+            <Route path="/beneficiary" element={<Beneficiary/>}/>
             
 
 
             {/* dynamic route */}
-            <Route path="/mfs-transfer/:id" element={<BalanceTransfer/>}/>
+            <Route path="/mfs-transfer/:id" element={<BalanceTransferMFS/>}/>
             <Route path="/mfs-transaction/:id" element={<Transaction/>}/>
+
+            <Route path="/bank-transfer/:id" element={<BalanceTransferBank/>}/>
+            <Route path="/bank-transaction/:id" element={<Transaction/>}/>
+
+            <Route path="/card-transfer/:id" element={<BalanceTransferCard/>}/>
+            <Route path="/card-transaction/:id" element={<Transaction/>}/>
+
             <Route path ="/edit-data/:data" element ={<EditData/>}/>
             <Route path="/card-details/:id" element={<CardDetails/>}/>
             <Route path="/msf-details/:id" element={<MSFDetails/>}/>

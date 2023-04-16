@@ -37,7 +37,7 @@ const Account = () => {
         </div>
       </div>
             </FullContainer>
-            <AuthFooter/>
+            <AuthFooter footerActive={'account'}/>
         </>
     );
 }
