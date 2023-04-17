@@ -4,13 +4,18 @@ import { fetchUserData } from './../../Auth/CallAPI';
 
 const ProfileBalance = () => {
     const [profileData,setProfileData] = useState({})
+
+    async function profileDataLoad(){
+        const data = await fetchUserData();
+        setProfileData(data)
+    }
     useEffect(() => {
-        async function profileData(){
-            const data = await fetchUserData();
-            setProfileData(data)
-        }
-        profileData()
+        profileDataLoad()
     },[])
+
+    if(!profileData.wallet){
+        profileDataLoad()
+    }
     return (
         <div className="card mb-3">
                 <div className="d-flex align-items-start gap-2">

@@ -17,7 +17,7 @@ const passions = [
   },
 ];
 
-const TransferBody = () => {
+const TransferBodyOwn = ({}) => {
   const {
     register,
     handleSubmit,
@@ -117,4 +117,4 @@ const TransferBody = () => {
   );
 };
 
-export default TransferBody;
+export default TransferBodyOwn;

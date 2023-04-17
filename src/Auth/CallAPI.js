@@ -108,3 +108,15 @@ export const getAccountDataById = async (id) => {
   });
   return await request.json()
 }
+
+
+export const getAccountDetailsWSA = async(id) =>{
+  const request = await fetch(`https://wirelessbd.com/api/get-account-details-with-selected-account-for-ata/${id}`,{
+    method:'GET',
+    headers:{
+      "Content-Type":"application/json",
+      Authorization: `Bearer ${userKey}`,
+    }
+  });
+  return await request.json()
+}

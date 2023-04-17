@@ -65,8 +65,8 @@ const EditMobileForm = () => {
           Authorization: `Bearer ${userKey}`,
         },
         body: JSON.stringify({
-            "mobile":{mobile},
-            "verify_code": {code}
+            "mobile":mobile,
+            "verify_code": code
         }),
       }
     );

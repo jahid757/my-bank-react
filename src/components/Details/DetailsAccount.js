@@ -3,6 +3,7 @@ import { visa_gold } from '../../assets/images/images';
 import { Link } from 'react-router-dom';
 
 const DetailsAccount = ({item}) => {
+    console.log(item.branch)
     return (
         <div className="pay_card_wrap">
             <div className="pay_card mb-3 card">

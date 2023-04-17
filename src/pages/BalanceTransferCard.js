@@ -2,8 +2,8 @@ import React from 'react';
 import Header from '../components/header/Header';
 import FullContainer from '../components/FullContainer';
 import AuthFooter from '../components/footer/AuthFooter';
-import TransferHead from '../components/balanceTransfer/TransferHead';
-import TransferBody from '../components/balanceTransfer/TransferBody';
+import TransferBodyOwn from '../components/balanceTransferBank/TransferBodyOwn';
+import TransferHead from '../components/balanceTransferBank/TransferHead';
 
 const BalanceTransferCard = () => {
     return (
@@ -11,7 +11,7 @@ const BalanceTransferCard = () => {
             <Header/>
             <FullContainer center_xy={true}>
                 <TransferHead/>
-                <TransferBody/>
+                <TransferBodyOwn/>
             </FullContainer>
             <AuthFooter footerActive={'card'}/>
         </>

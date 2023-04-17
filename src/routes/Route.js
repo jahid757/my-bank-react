@@ -29,6 +29,7 @@ import BalanceTransferBank from "../pages/BalanceTransferBank";
 import BalanceTransferCard from "../pages/BalanceTransferCard";
 import Beneficiary from "../pages/Beneficiary";
 import Terms from "../pages/Terms";
+import ChangePassword from "../Auth/ChangePassword/ChangePassword";
 
 const AppRoutes = ({ user }) => {
   return (
@@ -41,10 +42,10 @@ const AppRoutes = ({ user }) => {
           <Route  path="/terms" element={<Terms />} />
 
           <Route element={<PrivateRoute user={user} />}>
-            <Route index element={<Dashboard/>} />
+            <Route path='/' index element={<Dashboard/>} />
              <Route path="/edit-profile" element={<EditProfile/>} /> 
              <Route path="/edit-mobile" element={<EditMobile/>} /> 
-            <Route  path="/reset-password" element={<ResetPassword />} />
+            <Route  path="/reset-password" element={<ChangePassword />} />
             <Route  path="/profile" element={<Profile/>} />
             <Route path="/dashboard" element ={<Dashboard/>}/>
             <Route path="/card" element ={<Card/>}/>

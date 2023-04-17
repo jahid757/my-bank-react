@@ -6,7 +6,7 @@ import Swal from 'sweetalert2'
 
 const EditProfileForm = () => {
     const user = useContext(UserContext);
-    const {name, gender, address} = user[0];
+    const {name, gender, address,profession} = user[0];
     const [changeGender, setChangeGender] = useState(gender);
     const [userKey,setUserKey] = useState('')
     const [navigate,setNavigate] = useState(false)
@@ -31,11 +31,12 @@ const EditProfileForm = () => {
                 "name":data.name,
                 "gender":changeGender,
                 "image":null,
-                "address":data.address
+                "address":data.address,
+                "profession":profession
             })
         })
         const response = await request.json();
-        // console.log(response.status_code)
+        console.log(response,data)
         if(response.status_code === 201){
             Swal.fire(
                 'Good job!',

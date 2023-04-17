@@ -2,8 +2,8 @@ import React from 'react';
 import Header from '../components/header/Header';
 import FullContainer from '../components/FullContainer';
 import AuthFooter from '../components/footer/AuthFooter';
-import TransferHead from '../components/balanceTransfer/TransferHead';
-import TransferBody from '../components/balanceTransfer/TransferBody';
+import TransferHead from '../components/balanceTransferBank/TransferHead';
+import TransferBodyOwn from '../components/balanceTransferBank/TransferBodyOwn';
 
 const BalanceTransferMFS = () => {
     return (
@@ -11,7 +11,7 @@ const BalanceTransferMFS = () => {
             <Header/>
             <FullContainer center_xy={true}>
                 <TransferHead/>
-                <TransferBody/>
+                <TransferBodyOwn/>
             </FullContainer>
             <AuthFooter footerActive={'mfs'}/>
         </>
